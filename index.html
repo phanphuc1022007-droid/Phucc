@@ -1,19 +1,19 @@
-
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <meta charset="utf-8">
-<title>Dải phim Việt Nam</title>
+<title>Dải phim Cò Việt</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Be+Vietnam+Pro:wght@300;400&display=swap" rel="stylesheet">
 <style>
 /* Layout: a 3D arc of seven animated frames; the centre frame leads, the others fall away on both sides.
    Everything moves from one continuous position value, so drags, clicks and autoplay all glide the same way. */
 @property --acc{syntax:'<color>';inherits:true;initial-value:#d9573a}
-:root{color-scheme:dark;--bg:#100c0b;--ivory:#efe6d4;--mute:#8f8472;--acc:#d9573a;transition:--acc 1.4s ease}
+:root{--bg:transparent;--ivory:#f3e6c8;--mute:#b79a72;--acc:#d9b36c;--gold:#e3c27d;transition:--acc 1.4s ease}
 *{box-sizing:border-box;margin:0}
 html,body{height:100%}
-body{background:radial-gradient(120% 80% at 50% 105%,color-mix(in srgb,var(--acc) 26%,var(--bg)),var(--bg) 62%);color:var(--ivory);font-family:'Be Vietnam Pro',system-ui,sans-serif;overflow:hidden;display:flex;flex-direction:column;user-select:none;-webkit-user-select:none}
+html,body{background:transparent}
+body{color:var(--ivory);font-family:'Be Vietnam Pro',system-ui,sans-serif;overflow:hidden;display:flex;flex-direction:column;user-select:none;-webkit-user-select:none}
+header,.titles,.view{position:relative;z-index:1}
 header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:2.4vh max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px))}
-.logo{font:italic 600 22px 'Cormorant Garamond',Georgia,serif;letter-spacing:.04em}
+.logo{font:500 15px 'Cormorant Garamond',Georgia,serif;letter-spacing:.38em;text-transform:uppercase;color:var(--gold)}
 .hud{display:flex;align-items:center;gap:14px}
 .count{font:italic 500 20px 'Cormorant Garamond',Georgia,serif;color:var(--acc)}
 .count small{color:var(--mute);font-size:15px}
@@ -24,15 +24,17 @@ header{display:flex;justify-content:space-between;align-items:center;gap:12px;pa
 .pp .play{display:none}
 .paused .pp .play{display:block}.paused .pp .pause{display:none}
 .titles{height:clamp(40px,9vh,84px);position:relative;margin-top:.6vh;pointer-events:none}
-.titles span{position:absolute;left:50%;top:50%;white-space:nowrap;font:italic 600 clamp(28px,6.5vh,64px)/1 'Cormorant Garamond',Georgia,serif;opacity:0;will-change:transform,opacity}
+.titles span{position:absolute;left:50%;top:46%;white-space:nowrap;font:500 clamp(20px,4.6vh,44px)/1 'Cormorant Garamond',Georgia,serif;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);opacity:0;will-change:transform,opacity;padding-left:.34em}
+.titles::after{content:'';position:absolute;left:50%;bottom:0;width:min(260px,40vw);height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,#e3c27d,transparent)}
+.titles::before{content:'';position:absolute;left:50%;bottom:-3px;width:7px;height:7px;transform:translateX(-50%) rotate(45deg);background:#430f10;border:1px solid #e3c27d;z-index:1}
 .view{flex:1;min-height:0;position:relative;perspective:1700px;perspective-origin:50% 40%;touch-action:pan-y;cursor:grab}
 .view.drag{cursor:grabbing}
 .card{position:absolute;left:50%;top:50%;width:var(--w);aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:linear-gradient(120deg,#1a1311,#241a17,#1a1311);box-shadow:0 30px 60px -34px #000;will-change:transform,opacity}
 .card video{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;opacity:0;transition:opacity .8s ease;-webkit-user-drag:none}
 .card video.ok{opacity:1}
 .card::after{content:"";position:absolute;inset:0;background:#000;opacity:var(--sh,0);pointer-events:none}
-.card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;background:linear-gradient(135deg,#f6e6b8,transparent 38%,transparent 62%,var(--acc));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);opacity:var(--ring,0);z-index:2;pointer-events:none}
-.glow{position:absolute;left:50%;top:50%;width:var(--w);aspect-ratio:16/9;transform:translate(-50%,-50%);border-radius:14px;box-shadow:0 50px 100px -30px var(--acc);opacity:.85;pointer-events:none}
+.card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.25px;background:linear-gradient(135deg,#f7e3a8,#b98a3e 45%,#f7e3a8);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);opacity:var(--ring,0);z-index:2;pointer-events:none}
+.glow{display:none;position:absolute;left:50%;top:50%;width:var(--w);aspect-ratio:16/9;transform:translate(-50%,-50%);border-radius:14px;box-shadow:0 40px 110px -40px #e3c27d;opacity:.5;pointer-events:none}
 footer{padding:1.6vh max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px))}
 .sub{text-align:center;font-weight:300;font-size:clamp(12px,1.9vh,15px);letter-spacing:.04em;color:var(--mute);height:2.4em;transition:opacity .45s ease,transform .45s ease}
 .sub.out{opacity:0;transform:translateY(6px)}
@@ -87,10 +89,10 @@ function place(){
   const tt=TT[k],ta=Math.min(Math.abs(o),2);
   tt.style.transform='translate(-50%,-50%) translateX('+(o*Math.min(vw*.3,420)).toFixed(1)+'px)';tt.style.opacity=lerp(TO,ta).toFixed(3)}
  /* the glow follows the lead card's brightness */
- const n=Math.min(Math.abs(off(mod(Math.round(pos)))),1);GL.style.opacity=(.85*(1-n)).toFixed(3);GL.style.zIndex=0}
+ const n=Math.min(Math.abs(off(mod(Math.round(pos)))),1);GL.style.opacity=(.55*(1-n)).toFixed(3);GL.style.zIndex=0}
 function hud(i){
  if(i===shown)return;shown=i;
-  R.style.setProperty('--acc',D[i][2]);
+  
  $('c').innerHTML=String(i+1).padStart(2,'0')+' <small>/ '+String(N).padStart(2,'0')+'</small>';
 }
 function frame(now){
@@ -117,6 +119,5 @@ vw.addEventListener('pointerup',end);vw.addEventListener('pointercancel',end);
 let wl=0;addEventListener('wheel',e=>{const d=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY;if(Date.now()-wl<450||Math.abs(d)<20)return;wl=Date.now();step(d>0?1:-1)},{passive:true});
 addEventListener('resize',size);
 size();requestAnimationFrame(t=>{last=t;frame(t)});
-</script>
 
-</body></html>
+</script>
